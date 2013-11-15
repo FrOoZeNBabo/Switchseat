@@ -22,7 +22,7 @@ driver _veh setpos (getpos _veh);
     sleep 0.5;
     _unit action ["movetodriver", _veh];
     sleep 1;
-    _unit action ["AutoHover", _veh];
+    _unit action ["AutoHover", _veh]; //enable AutoHover and start Enigne. Otherwise you would be too slow...
     _unit action ["engineOn", _veh];
     sleep 0.5;
     hint format ["You are now pilot!"];
