@@ -1,1 +1,0 @@
-[] execVM "Scripts\seat_action.sqf";
