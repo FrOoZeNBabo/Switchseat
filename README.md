@@ -6,5 +6,4 @@ What it does:.
 - Pilot can switch to Back-/Gunnerseat and a AI Pilot will take place as pilot, so you can shoot people from the gunner, even when you are alone. The AI Pilot is controllable with the "," on the NumPad. 
 
 What you CAN do:
-- You can either take the switchseatAI.sqf with a AI Pilot, OR you can use the switchseatNOAI.sqf if you dont want a AI Pilot.
-- Rename the file you chose to switchseat.sqf
+- You can either take the switchseat.sqf with a AI Pilot, OR you can use the switchseatNOAI.sqf if you dont want a AI Pilot. Just rename the switchseatNOAI.sqf to switchseat.sqf if you want if.
