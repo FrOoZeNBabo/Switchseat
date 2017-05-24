@@ -1,4 +1,4 @@
-Switchseat by FrOoZeN
+Switchseat
 ==========
 
 What it does:. 
