@@ -7,28 +7,25 @@ _action = _actionArray select 0;
 enableRadio false;
 showSubtitles false;
  
-if (_action == "pilot") then
-{
-if (isNull driver _veh or !alive driver _veh or !isplayer driver _veh) then
-    {
-_DEADORAI = driver _veh;
-if (!isplayer driver _veh and alive driver _veh) then
-{
-driver _veh setpos [0,0,0];
-deletevehicle _DEADORAI;
-} else {
-driver _veh setpos (getpos _veh);
-};
-    sleep 0.5;
-    _unit action ["movetodriver", _veh];
-    sleep 1;
-    _unit action ["AutoHover", _veh]; //enable AutoHover and start Enigne. Otherwise you would be too slow...
-    _unit action ["engineOn", _veh];
-    sleep 0.5;
-    hint format ["You are now pilot!"];
+if (_action == "pilot") then {
+    if (isNull driver _veh or !alive driver _veh or !isplayer driver _veh) then {
+        _DEADORAI = driver _veh;
+        if (!isplayer driver _veh and alive driver _veh) then {
+            driver _veh setpos [0,0,0];
+            deletevehicle _DEADORAI;
+        } else {
+            driver _veh setpos (getpos _veh);
+        };
+        sleep 0.5;
+        _unit action ["movetodriver", _veh];
+        sleep 1;
+        _unit action ["AutoHover", _veh]; //enable AutoHover and start Enigne. Otherwise you would be too slow...
+        _unit action ["engineOn", _veh];
+        sleep 0.5;
+        hint format ["You are now pilot!"];
     } else {
-    sleep 0.5;
-    hint format ["There is already a pilot inside!"];
+        sleep 0.5;
+        hint format ["There is already a pilot inside!"];
     }
 };
  
