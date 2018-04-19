@@ -29,30 +29,27 @@ if (_action == "pilot") then {
     }
 };
  
-if (_action == "gunner") then
-{
-if (((getPos _veh) select 2) > 10) then
-{
-if (isNull gunner _veh or !alive gunner _veh) then
-    {
-    _PILOT = group player createUnit ["US_Pilot_Light_EP1", Position player, [], 0, "CAN_COLLIDE"]; //create Unit
-    _PILOT setVehicleVarName "_PILOT";
-    _PILOT setUnitAbility 0.60000002;
-    _PILOT removeweapon "itemmap";
-    _PILOT removeweapon "itemradio";
-    _PILOT removeweapon "itemwatch";
-    _PILOT removeweapon "itemcompass";
-    _unit action ["movetogunner", _veh]; //Move Player in Gunner
-    sleep 0.1;
-    _PILOT action ["getindriver", _veh]; //Move AI in Pilot
-    hint format ["You are now gunner!"];
+if (_action == "gunner") then {
+    if (((getPos _veh) select 2) > 10) then {
+        if (isNull gunner _veh or !alive gunner _veh) then {
+            _PILOT = group player createUnit ["US_Pilot_Light_EP1", Position player, [], 0, "CAN_COLLIDE"]; //create Unit
+            _PILOT setVehicleVarName "_PILOT";
+            _PILOT setUnitAbility 0.60000002;
+            _PILOT removeweapon "itemmap";
+            _PILOT removeweapon "itemradio";
+            _PILOT removeweapon "itemwatch";
+            _PILOT removeweapon "itemcompass";
+            _unit action ["movetogunner", _veh]; //Move Player in Gunner
+            sleep 0.1;
+            _PILOT action ["getindriver", _veh]; //Move AI in Pilot
+            hint format ["You are now gunner!"];
+        } else {
+            sleep 0.5;
+            hint format ["There is already a gunner inside!"];
+        }
     } else {
-    sleep 0.5;
-    hint format ["There is already a gunner inside!"];
+        hint format ["You are flying too low!"];
     }
-} else {
-hint format ["You are flying too low!"];
-}
 };
  
 if (_action == "back") then
